@@ -259,6 +259,8 @@ class RSC:
         for key in self.currents.keys():
             plt.plot(self.time_series, [(self.gNaMax * self.currents[key][:,4][i]) * (self.find_voltage(self.time_series[i], key) - self.VNa) for i in range(len(self.time_series))], label=f'mv={key}')
         plt.legend()
+        plt.xlabel('time (ms)')
+        plt.ylabel('pA')
         plt.savefig('./rsc.png')
             
 
